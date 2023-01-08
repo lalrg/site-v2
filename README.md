@@ -17,7 +17,15 @@ As mentioned before, I am building a personal site, I wasn't sure of what I shou
 >1. Contact: This page should include your contact information, such as your email address and social media links. You can also include a form for visitors to send you messages or inquiries.
 >1. Blog (future iteration): As you mentioned, you can add a blog section to your website in a future iteration. This can be a place for you to share your thoughts and insights on topics related to your field, as well as any updates or news about your work.
 
-Adding an :black_square_button: About, :black_square_button: Resume, :black_square_button: Portfolio and :black_square_button: Contact section, seems like a good objective to start working on. The plan would be to add a blog at some point if I really find this project interesting and funny for my own free time.
+Adding an :black_square_button: About, :black_square_button: Resume, :black_square_button: Portfolio and :black_square_button: Contact section, seems like a good objective to start working on. The plan would be to add a blog at some point if I really find this project interesting and funny for my own free time. For now I will hardcode the information into the code. Probably at some point I will move the data to a headless CMS or I may write my own backend to try a technology that I may find interesting, I will define this in the future.
+
+### Technologies that I am testing
+
+### Technologies that I won't use but I found interesting
+
+- [astro.build](https://astro.build/) 
+- [Create-t3](https://create.t3.gg/)
+
 
 ## How to run the project
 
