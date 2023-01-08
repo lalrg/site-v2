@@ -1,36 +1,24 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Site-v2 / Playground
 
-## Getting Started
+## Objective
 
-First, run the development server:
+I will host in this repository the code for my personal site and it will also work as a playground for other technologies that I want to try in my personal site so that I can implement them and see how they work before using them in a real life scenario.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+You'll se in the commit history, a lot of code deleted, new code added, code moved from one directory to another, and it is completely normal because of the motivation of this repository.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## What I am building
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+As mentioned before, I am building a personal site, I wasn't sure of what I should include and what I should not, but here I have a starter list of requirementes that I asked ChatGPT to generate for me:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+>A personal website for a developer can include the following pages and sections:
+>1. About: Brief introduction to who you are, your skills and expertise, and your professional experience. You can also include a headshot or professional photo of yourself.
+>1. Resume: You can use this page to showcase your resume or CV, highlighting your education, employment history, and any relevant achievements or certifications.
+>1. Portfolio: This page can include examples of your work, such as projects you have completed or open source contributions. You can include links to live demos or code repositories.
+>1. Contact: This page should include your contact information, such as your email address and social media links. You can also include a form for visitors to send you messages or inquiries.
+>1. Blog (future iteration): As you mentioned, you can add a blog section to your website in a future iteration. This can be a place for you to share your thoughts and insights on topics related to your field, as well as any updates or news about your work.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Adding an :black_square_button: About, :black_square_button: Resume, :black_square_button: Portfolio and :black_square_button: Contact section, seems like a good objective to start working on. The plan would be to add a blog at some point if I really find this project interesting and funny for my own free time.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## How to run the project
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+I will be adding instructions on how to run the project and any relevant information as I work on it.
