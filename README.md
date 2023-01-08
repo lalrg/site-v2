@@ -1,32 +1,41 @@
-# Site-v2 / Playground
+# My Personal Site & Playground
 
 ## Objective
 
-I will host in this repository the code for my personal site and it will also work as a playground for other technologies that I want to try in my personal site so that I can implement them and see how they work before using them in a real life scenario.
+This repository contains the code for my personal website, which serves as a
+portfolio and a place to share my thoughts and insights on topics related to my
+field. It is also a playground for experimenting with new technologies and
+techniques. You can expect to see a lot of changes and updates to the code as I
+continue to work on and improve the site.
 
-You'll se in the commit history, a lot of code deleted, new code added, code moved from one directory to another, and it is completely normal because of the motivation of this repository.
+## Features
 
-## What I am building
+In the first iteration that I am currently working on, the website will include
+the following pages and sections:
 
-As mentioned before, I am building a personal site, I wasn't sure of what I should include and what I should not, but here I have a starter list of requirementes that I asked ChatGPT to generate for me:
+- [ ] About
+- [ ] Resume
+- [ ] Portfolio
+- [ ] Contact
 
->A personal website for a developer can include the following pages and sections:
->1. About: Brief introduction to who you are, your skills and expertise, and your professional experience. You can also include a headshot or professional photo of yourself.
->1. Resume: You can use this page to showcase your resume or CV, highlighting your education, employment history, and any relevant achievements or certifications.
->1. Portfolio: This page can include examples of your work, such as projects you have completed or open source contributions. You can include links to live demos or code repositories.
->1. Contact: This page should include your contact information, such as your email address and social media links. You can also include a form for visitors to send you messages or inquiries.
->1. Blog (future iteration): As you mentioned, you can add a blog section to your website in a future iteration. This can be a place for you to share your thoughts and insights on topics related to your field, as well as any updates or news about your work.
+I plan to add a blog section in a future iteration, where I can share my
+thoughts and insights on topics related to my field, as well as any updates or
+news about my work.
 
-Adding an :black_square_button: About, :black_square_button: Resume, :black_square_button: Portfolio and :black_square_button: Contact section, seems like a good objective to start working on. The plan would be to add a blog at some point if I really find this project interesting and funny for my own free time. For now I will hardcode the information into the code. Probably at some point I will move the data to a headless CMS or I may write my own backend to try a technology that I may find interesting, I will define this in the future.
+### Technologies I'm Testing
 
-### Technologies that I am testing
+I am using Next.js, TypeScript, and Tailwind CSS for this project. I may also
+experiment with other technologies and techniques as I continue to work on the
+site.
 
-### Technologies that I won't use but I found interesting
+### Technologies I'm Interested In (but not using in this project)
 
-- [astro.build](https://astro.build/) 
+I have found the following technologies interesting but have decided not to
+incorporate them into this project:
+
+- [astro.build](https://astro.build/)
 - [Create-t3](https://create.t3.gg/)
 
+## How to Run the Project
 
-## How to run the project
-
-I will be adding instructions on how to run the project and any relevant information as I work on it.
+Instructions for running the project will be added as I continue to work on it.
