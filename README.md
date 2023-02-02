@@ -25,6 +25,10 @@ The following technologies are being used in this project:
 
 I may also experiment with other technologies and techniques as I continue to work on the site.
 
+### Techniques that I will be using
+
+For styling information, read [this](docs/styling.md).
+
 ### Technologies I'm Interested In (but not using in this project)
 
 I have found the following technologies interesting but have decided not to incorporate them into this project:
