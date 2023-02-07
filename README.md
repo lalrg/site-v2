@@ -21,7 +21,6 @@ The following technologies are being used in this project:
 
 - [Next.js](https://nextjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
 
 I may also experiment with other technologies and techniques as I continue to work on the site.
 

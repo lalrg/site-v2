@@ -2,13 +2,14 @@ import Link from 'next/link'
 import styles from './header.module.css'
 
 const HeaderLink = (href: string, text: string) => {
-  return <Link href={href} className='text-center text-lg'>{text}</Link>
+  return <Link href={href} className={styles.link}>{text}</Link>
 }
 
 export default function Header() {
   return (
-    <header className='w-full bg-[#B4AEE8]'> &nbsp;
-      <nav className={`grid grid-cols-4 items-center justify-center gap-4 ${styles.nav}`}>
+    <header className={`${styles.header}`}>
+      <h1 className={styles.title}>Luis Richmond</h1>
+      <nav className={styles.nav}>
         {HeaderLink("/", "Home")}
         {HeaderLink("/resume", "Resume")}
         {HeaderLink("/portfolio", "Portfolio")}

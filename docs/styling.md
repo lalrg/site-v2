@@ -1,6 +1,6 @@
 # Styling technique: Choosing CSS Modules
 
-I will mainly use tailwind, but when necessary I will use CSS Modules.
+I will be using mainly css-modules
 
 ## Advantages of Using CSS Modules
 - Easy implementation and maintenance

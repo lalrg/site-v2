@@ -1,5 +1,49 @@
-.nav {
+.header {
+  height: auto;
+  width: 100vw;
+  display: grid;
+  top:0;
   right: 0;
-  margin-left: 50vw;
-  top: 0;
+  left: 0;
+  position: sticky;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: 
+  'title'
+  'links';
+  border-bottom: 2px solid #B4AEE8;
+}
+
+.nav {
+  display: grid;
+  grid-area: links;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  justify-content: center;
+  row-gap: 4;
+  width: 100vw;
+  height: auto;
+}
+
+.title {
+  grid-area: title;
+  margin: 0;
+  padding: 0;
+  height: 40px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.link {
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  height: 100%;
+  display: grid;
+  align-items: center;
+}
+
+.link:hover {
+  text-decoration: underline;
 }
