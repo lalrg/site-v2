@@ -1,6 +1,6 @@
 .header {
   height: auto;
-  width: 100vw;
+  width: 80vw;
   display: grid;
   top:0;
   right: 0;
@@ -20,8 +20,7 @@
   grid-template-columns: repeat(4, 1fr);
   align-items: center;
   justify-content: center;
-  row-gap: 4;
-  width: 100vw;
+  width: 50%;
   height: auto;
 }
 
@@ -33,6 +32,8 @@
   padding-bottom: 10px;
   padding-top: 10px;
   text-align: center;
+  font-size: 40px;
+  font-weight: 500;
 }
 
 .link {
@@ -45,5 +46,11 @@
 }
 
 .link:hover {
-  text-decoration: underline;
+  border-bottom: 3px solid #B4AEE8;
+  font-weight: 800;
+}
+
+.linkActive {
+  border-bottom: 3px solid #B4AEE8;
+  font-weight: 800;
 }

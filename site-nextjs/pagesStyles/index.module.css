@@ -1,0 +1,15 @@
+.title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.subTitle {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.introSection {
+  margin-bottom: 3rem;
+}
