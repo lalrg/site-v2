@@ -1,6 +1,14 @@
+@media screen and (min-width: 1025px) { 
+  .content {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 5%;
+  }
+}
+
 .content {
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-bottom: 5%;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 2rem;
   display: block;
 }
