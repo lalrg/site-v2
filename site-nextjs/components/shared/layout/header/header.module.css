@@ -1,4 +1,4 @@
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1000px) {
   .header {
     width: 80vw;
     grid-template-rows: repeat(2, 1fr);
@@ -7,6 +7,14 @@
     width: 50%;
     justify-content: start;
     grid-auto-flow: row;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .nav {
+    overflow-x: scroll;
+    overflow-y: hidden;
   }
 }
 
@@ -26,8 +34,6 @@
   display: grid;
   grid-area: links;
   grid-template-columns: repeat(4, auto);
-  overflow-x: scroll;
-  overflow-y: hidden;
   align-items: center;
   width: 100%;
   height: auto;
