@@ -13,12 +13,13 @@ export default function Header() {
   const router = useRouter();
   return (
     <header className={`${styles.header}`}>
-      <p className={styles.title}>Luis Richmond</p>
+      <Link className={styles.titleLink} href='/'>
+        <p className={`${styles.title} glow`}>Luis Richmond</p>
+      </Link>
       <nav className={styles.nav}>
-        {HeaderLink("/", "Home", router)}
+        {HeaderLink("/", "Intro and contact Info", router)}
         {HeaderLink("/resume", "Resume", router)}
         {HeaderLink("/portfolio", "Portfolio", router)}
-        {HeaderLink("/contact", "Contact", router)}
       </nav>
     </header>
   )

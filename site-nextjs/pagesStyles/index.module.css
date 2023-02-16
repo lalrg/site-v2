@@ -13,3 +13,24 @@
 .introSection {
   margin-bottom: 3rem;
 }
+
+.contactLinks {
+  font-size: 2rem;
+  width: auto;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+}
+
+.contactLink {
+  margin: 1rem;
+}
+
+.contactLinkIcon {
+  color: white;
+}
+
+.contactSection {
+  display: grid;
+}

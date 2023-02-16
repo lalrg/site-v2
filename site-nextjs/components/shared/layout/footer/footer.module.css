@@ -13,5 +13,8 @@
 .footerText {
   margin: 0;
   padding: 0;
-  color: red;
+}
+
+.footerLink {
+  color: white;
 }
