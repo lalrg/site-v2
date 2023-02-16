@@ -16,13 +16,13 @@ export default function Home() {
       <section className={styles.contactSection}>
         <h2 className={styles.subTitle}>Contact Information</h2>
         <span className={styles.contactLinks}>
-          <Link href='/' className={styles.contactLink}>
+          <Link href='https://www.linkedin.com/in/lalrg/' className={styles.contactLink}>
             <TfiLinkedin className={styles.contactLinkIcon} />
           </Link>
-          <Link href='/' className={styles.contactLink}>
+          <Link href='https://twitter.com/luis0110' className={styles.contactLink}>
             <TfiTwitterAlt className={styles.contactLinkIcon} />
           </Link>
-          <Link href='/' className={styles.contactLink}>
+          <Link href='https://github.com/lalrg' className={styles.contactLink}>
             <TfiGithub className={styles.contactLinkIcon} />
           </Link>
         </span>
