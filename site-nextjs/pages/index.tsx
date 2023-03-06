@@ -7,7 +7,7 @@ export default function Home() {
     <main>
       <section className={styles.introSection}>
         <h1 className={styles.title}>Nice to meet you, I am Luis</h1>
-        <p>I am a problem-solver and enjoy helping people do their jobs more efficiently through the development of applications. I have been working in this field for about 7 years and have had the opportunity to work with a variety of companies, including the Government, small local business, and global companies with hundreds of employees. I have also worked as a consultant for several North American companies.</p>
+        <p>I am a problem-solver and enjoy helping people do their jobs more efficiently through the development of applications. I have been working in this field for about 7 years and have had the opportunity to work with a variety of companies, including the Government, small businesses, and global companies with hundreds of employees. I have also worked as an independant consultant for several companies.</p>
       </section>
       <section>
         <h2 className={styles.subTitle}>Professional Summary</h2>

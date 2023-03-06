@@ -18,7 +18,7 @@ export default function Header() {
       </Link>
       <nav className={styles.nav}>
         {HeaderLink("/", "Intro and contact Info", router)}
-        {HeaderLink("/resume", "Resume", router)}
+        {HeaderLink("/employmentHistory", "Employment History", router)}
         {HeaderLink("/portfolio", "Portfolio", router)}
       </nav>
     </header>

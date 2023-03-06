@@ -1,0 +1,29 @@
+.title {
+  text-align: center;
+  font-size: 1.875rem;
+  font-weight: 500;
+}
+
+.subTitle {
+  text-align: center;
+  font-size: 1.563rem;
+  font-weight: 500;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+.employmentHistory {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 3.5rem;
+  row-gap: 2rem;
+}
+
+@media screen and (min-width: 1025px) { 
+  .employmentHistory {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
+}
