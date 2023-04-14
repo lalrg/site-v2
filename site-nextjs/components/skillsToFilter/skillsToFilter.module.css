@@ -1,0 +1,49 @@
+.subTitle {
+  text-align: center;
+  font-size: 1.563rem;
+  font-weight: 500;
+}
+.singleSkill {
+  display: inline;
+  margin: 0.2rem;
+  cursor: pointer;
+  border-style: solid;
+  border-color: white;
+  border-width: 1px;
+  padding: 0.5rem;
+}
+
+@media screen and (min-width: 1000px) {
+  .singleSkill {
+    margin: 0.5rem;
+    cursor: pointer;
+    border-style: solid;
+    border-color: white;
+    border-width: 2px;
+  }
+}
+
+.skillList{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 0;
+  justify-items: center;  
+}
+
+@media screen and (min-width: 1000px) {
+  .skillList {
+    text-align: center;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0;
+  }
+}
+
+.selected {
+  background-color: #93329E;
+}
+
+.filtersContainer {
+  display: grid;
+  justify-content: center;
+  width: 100%;
+}

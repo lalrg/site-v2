@@ -22,7 +22,7 @@ const EmploymentHistory: React.FC = ()=> {
         <h1 className={styles.title}>Employment History </h1>
         <p>Companies I have worked with and the technology stacks I have used.</p>
       </section>
-        <SkillsToFilter onChange={(c)=>{setSkillsToFilter(c)}} allSkills={allSkills} />
+        <SkillsToFilter selectedSkills={skillsToFilter} onChange={(c)=>{setSkillsToFilter(c)}} allSkills={allSkills} />
         <section className={`${styles.section} ${styles.employmentHistory}`}>
           {
             workingHistoryArray.map(
@@ -37,7 +37,6 @@ const EmploymentHistory: React.FC = ()=> {
                 )
                 if(display || !skillsToFilter.length)
                 {
-                  display = false;
                   return (<WorkHistoryItem 
                     jobDescription={i.jobDescription}
                     company={i.company}
@@ -47,9 +46,6 @@ const EmploymentHistory: React.FC = ()=> {
                     bulletPoints={i.bulletPoints}
                     key={i.company + i.endDate}
                   />)
-              }
-              else {
-                return <></>
               }
               }
             )

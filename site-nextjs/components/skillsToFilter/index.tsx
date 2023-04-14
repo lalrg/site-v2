@@ -1,21 +1,36 @@
+import styles from './skillsToFilter.module.css'
+
 type SkillsToFilterProps = {
   allSkills: Array<string>;
+  selectedSkills: Array<string>;
   onChange: (x: Array<string>) => void; 
 } 
 
-const mapSkill = (skill: string) => {
+const mapSkill = (skill: string, selected: boolean, onClick: (item: string, selected: boolean)=> void) => {
   return (
-    <div key={skill}>{skill}</div>
+    <li className={`${styles.singleSkill} ${selected && styles.selected}`} onClick={() => onClick(skill, !selected)} key={skill}>{skill}</li>
   )
 }
 
-const SkillsToFilter: React.FC<SkillsToFilterProps> = ({allSkills}) => {
+const SkillsToFilter: React.FC<SkillsToFilterProps> = ({allSkills, selectedSkills, onChange}) => {
+  const onClick = (skill: string, selected: boolean) => {
+    if(!selected) {
+      onChange(selectedSkills.filter(x=> x !== skill))
+    }
+    else {
+      onChange([...selectedSkills, skill])
+    }
+  }
   return(
     <>
-      <h3>Filter working experiences by:</h3>
-      {
-        allSkills.map(s=>mapSkill(s))
-      }
+      <h3 className={styles.subTitle}>Filter working experiences by:</h3>
+      <div className={styles.filtersContainer}>
+        <ul className={styles.skillList}>
+          {
+            allSkills.map(s=>mapSkill(s, selectedSkills.includes(s), onClick))
+          }
+        </ul>
+      </div>
     </>
   )
 }

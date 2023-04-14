@@ -19,14 +19,14 @@ const WorkHistoryItem: React.FC<WorkHistoryItemProps> = ({
   jobDescription
 }) => {
   return (
-    <article className={styles.mainArticle}>
+    <article className={styles.mainWHI}>
       <h2 className={styles.companyName}>{position}</h2>
       <p className='glow'> {company} </p>
       <p> Start date: {startDate} <br/> End date: {endDate}</p>
       <p>
         {jobDescription}
       </p>
-      <div className={styles.techStack}>
+      <div>
         {bulletPoints.map((bulletPoint) => (
           <span 
             className={styles.techItem} 
