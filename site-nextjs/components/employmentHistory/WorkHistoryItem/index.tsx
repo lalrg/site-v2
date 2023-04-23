@@ -26,7 +26,7 @@ const WorkHistoryItem: React.FC<WorkHistoryItemProps> = ({
       <p>
         {jobDescription}
       </p>
-      <div>
+      <div className={styles.techContainer}>
         {bulletPoints.map((bulletPoint) => (
           <span 
             className={styles.techItem} 

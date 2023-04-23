@@ -15,7 +15,7 @@
 
 @media screen and (min-width: 1000px) {
   .singleSkill {
-    margin: 0.5rem;
+    margin: 0.2rem;
     cursor: pointer;
     border-style: solid;
     border-color: white;
@@ -25,7 +25,7 @@
 
 .skillList{
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   padding: 0;
   justify-items: center;  
 }
@@ -33,7 +33,7 @@
 @media screen and (min-width: 1000px) {
   .skillList {
     text-align: center;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     padding: 0;
   }
 }

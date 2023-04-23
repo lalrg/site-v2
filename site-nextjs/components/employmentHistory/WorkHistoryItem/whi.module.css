@@ -6,8 +6,16 @@
 .techItem {
   background-color: #93329E;
   margin-right: 1rem;
+  margin-bottom: 0.2rem;
 }
 
 .mainWHI {
   width: 18.75rem;
+}
+
+.techContainer {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  flex-wrap: wrap;
 }
