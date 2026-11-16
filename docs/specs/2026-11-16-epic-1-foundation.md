@@ -49,7 +49,7 @@ Each ends green (`yarn lint`, `yarn typecheck`, `yarn build`, routes served) and
 
 ### R1 — Runtime and dependency set, pinned
 
-Node 26.13.1 via `"engines": { "node": ">=26.13.0 <27" }` and `.nvmrc`, so an unsupported Node is rejected at install rather than silently used. Versions: `next@16.4.6`, `react`/`react-dom@19.3.1`, `typescript@5.9.3`, `eslint@10.15.0`, `eslint-config-next@16.4.6`, `@types/react@19.3.0`, `@types/react-dom@19.3.0`, `@types/node@26.6.6`, `vitest@5.1.0`; `autoprefixer`, `postcss`, `react-icons` stay (Q5). One `yarn.lock`, yarn classic. TypeScript stays on 5.9.3: 6.0.3 and 7.0.2 are unproven against `next build` type checking and `eslint-config-next`, and a major bump is its own change with its own rollback point. No `--turbopack` flag in any script; `next.config.js` keeps `reactStrictMode: true` and gains no `eslint` key.
+Node 26.13.1 via `"engines": { "node": ">=26.13.0 <27" }` and `.nvmrc`, so an unsupported Node is rejected at install rather than silently used. Versions: `next@16.4.6`, `react`/`react-dom@19.3.1`, `typescript@5.9.3`, `eslint@10.15.0`, `eslint-config-next@16.4.6`, `@types/react@19.3.0`, `@types/react-dom@19.3.0`, `@types/node@26.6.6`, `vitest@5.1.0`; `autoprefixer`, `postcss`, `react-icons` stay (D6), except for an in-range bump that a Next 16 peer requirement forces — the ticket must record it, and a major bump is a spec amendment. One `yarn.lock`, yarn classic. TypeScript stays on 5.9.3: 6.0.3 and 7.0.2 are unproven against `next build` type checking and `eslint-config-next`, and a major bump is its own change with its own rollback point. No `--turbopack` flag in any script; `next.config.js` keeps `reactStrictMode: true` and gains no `eslint` key.
 
 - [ ] `yarn install` fails with an engines error under 23.11 and succeeds under 26.13.1; `yarn install --frozen-lockfile` then passes with no peer warning.
 - [ ] `yarn why next` and `yarn why typescript` each resolve to exactly one version.
@@ -179,12 +179,14 @@ Allowed deltas, exhaustive: `<html lang="en">` added, CSS-module class hashes ch
 
 ### R16 — Formatter baseline (Phase 0.5, decision D3)
 
-`prettier@3.10.1` configured exactly as `typescript.md` §11 requires: `semi: false`, `singleQuote: true`, 2-space indent. It lands as one `style:` commit that changes formatting and nothing else, before any file moves; `.git-blame-ignore-revs` records that commit. `.prettierignore` covers `.next/`, `node_modules/`, `next-env.d.ts`, `yarn.lock`. Scripts: `"format": "prettier --write ."`, `"format:check": "prettier --check ."`.
+`prettier@3.10.1` configured exactly as `typescript.md` §11 requires: `semi: false`, `singleQuote: true`, `printWidth: 100`, `trailingComma: "all"`, 2-space indent. It lands as one PR of two commits — the setup, then a `style:` reformat that changes formatting and nothing else — before any file moves. `.prettierignore` covers `.next/`, `node_modules/`, `next-env.d.ts`, `yarn.lock`. Scripts: `"format": "prettier --write ."`, `"format:check": "prettier --check ."`.
 
-- [ ] Reading the Phase 0.5 diff shows semicolons, quotes and indentation only — no identifier, no JSX structure, no string literal content.
+`.git-blame-ignore-revs` is deliberately **not** part of this requirement: merges are squash-only, so the reformat commit's SHA never reaches `main` and the file would point at a commit that does not exist. Blame noise is accepted; a later ticket can record the merged SHA if it becomes painful.
+
+- [ ] Reading the Phase 0.5 diff shows no identifier, JSX structure or string-literal content change. Semicolons, quote style, rewrapping and multiline trailing commas are all in scope and expected.
 - [ ] `yarn format:check` exits 0, and fails on a file given a trailing semicolon.
 - [ ] `yarn lint` and `yarn build` stay green across the reformat, proving it was behaviour-neutral.
-- [ ] `git log -1 --stat` for that commit touches no file under `docs/specs/`.
+- [ ] `git show --stat` for that commit touches no file under `docs/`.
 
 ## Edge cases and failure behaviour
 
@@ -212,7 +214,8 @@ Allowed deltas, exhaustive: `<html lang="en">` added, CSS-module class hashes ch
 ## Decisions
 
 Resolved 2026-11-16. D1, D2 and D4 are deliberate deferrals with the user's
-sign-off — the diagnosis records them as debt, not as clean.
+sign-off; D5 and D6 are contingent fallbacks that apply only if their trigger
+fires — the diagnosis records them as debt, not as clean.
 
 | # | Decision | Rationale |
 | --- | --- | --- |
@@ -220,8 +223,8 @@ sign-off — the diagnosis records them as debt, not as clean.
 | D2 | Breakpoints stay 1000/1025; media-query ordering is still fixed in Phase 4. | Normalising to 1024 moves the desktop layout boundary by 24px. Ordering fixes have no visual effect, so those stay in scope. |
 | D3 | Prettier adopted now, as its own Phase 0.5 commit. | A format gate cannot retroactively be added once the migration diffs exist; an isolated commit keeps it reviewable. |
 | D4 | `.mainWHI` 320px overflow and unnamed icon links deferred with the D1 a11y batch. | Same class of change: fixing the card width reflows the mobile layout, and both need a focus/aria pass to test properly. Recorded as P1 debt with a named Epic 2 owner. |
-| Q4 | If `exactOptionalPropertyTypes` errors originate in `@types/react` 19 rather than this repo, drop that one flag and record the exception in `AGENTS.md` §Standards. | Do not contort app code to satisfy a third-party type definition. |
-| Q5 | Stay on `react-icons@4.7.1` if React 19 renders the four icons with no console warning (peer range is `*`). | Avoid a second upgrade inside the upgrade. |
+| D5 | If `exactOptionalPropertyTypes` errors originate in `@types/react` 19 rather than this repo, drop that one flag and record the exception in `AGENTS.md` §Standards. | Do not contort app code to satisfy a third-party type definition. |
+| D6 | Stay on `react-icons@4.7.1` if React 19 renders the four icons with no console warning (peer range is `*`). | Avoid a second upgrade inside the upgrade. |
 
 ## Assumptions
 
