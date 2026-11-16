@@ -22,9 +22,8 @@
   justify-items: center;
 }
 
-@media screen and (min-width: 1025px) { 
+@media screen and (min-width: 1025px) {
   .employmentHistory {
     grid-template-columns: repeat(3, 1fr);
   }
-  
 }

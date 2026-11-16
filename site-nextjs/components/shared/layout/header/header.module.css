@@ -45,15 +45,15 @@
   height: auto;
   width: 100%;
   display: grid;
-  top:0;
+  top: 0;
   right: 0;
   left: 0;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(2, 1fr);
-  grid-template-areas: 
-  'title'
-  'links';
-  border-bottom: 0.125rem solid #B4AEE8;
+  grid-template-areas:
+    'title'
+    'links';
+  border-bottom: 0.125rem solid #b4aee8;
 }
 
 .link {
@@ -68,11 +68,11 @@
 }
 
 .link:hover {
-  border-bottom: 0.188rem solid #B4AEE8;
+  border-bottom: 0.188rem solid #b4aee8;
   font-weight: 800;
 }
 
 .linkActive {
-  border-bottom: 0.188rem solid #B4AEE8;
+  border-bottom: 0.188rem solid #b4aee8;
   font-weight: 800;
 }
