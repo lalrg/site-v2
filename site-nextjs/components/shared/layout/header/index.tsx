@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import styles from './header.module.css'
-import { NextRouter, useRouter } from 'next/router'
+import { useRouter } from 'next/router'
+import type { NextRouter } from 'next/router'
 
 const HeaderLink = (href: string, text: string, router: NextRouter) => {
   return (
