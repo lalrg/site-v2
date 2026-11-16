@@ -8,7 +8,7 @@ lives in `site-nextjs/`; the repo root holds docs and the license.
 
 | Area | Choice | Version |
 | --- | --- | --- |
-| Runtime | Node | 23.11.0 local (verified; no `engines` pin) |
+| Runtime | Node | 26.13.1 (pinned via `.nvmrc` + `engines`) |
 | Package manager | Yarn classic (committed `yarn.lock`) | 1.22.22 |
 | Language(s) | TypeScript (strict), CSS Modules | 4.9.4 |
 | Framework | Next.js, pages router | 13.1.1 |
@@ -106,6 +106,9 @@ in `.env.example` with a placeholder and one-line comment.
 ## Notes for agents
 
 - Repo root is a container only: run Node commands inside `site-nextjs/`.
+- Node 26.13.1 is pinned via `site-nextjs/.nvmrc` + `engines`; install it with
+  `nvm install 26.13.1`. Yarn classic 1.22.22 runs on Node 26 (corepack is not
+  assumed).
 - `next-env.d.ts` and `.next/` are gitignored — never commit them, and expect a
   fresh clone to fail standalone `tsc` until the first build.
 - `caniuse-lite` is outdated and logs a warning on build. It is noise, not a
