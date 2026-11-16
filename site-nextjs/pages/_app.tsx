@@ -6,5 +6,9 @@ import { Inconsolata } from '@next/font/google'
 const inconsolata = Inconsolata({ subsets: ['latin'] })
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Layout className={inconsolata.className}><Component {...pageProps} /></Layout>
+  return (
+    <Layout className={inconsolata.className}>
+      <Component {...pageProps} />
+    </Layout>
+  )
 }

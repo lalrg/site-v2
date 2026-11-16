@@ -1,25 +1,29 @@
 import Link from 'next/link'
 import styles from './header.module.css'
-import { NextRouter, useRouter } from 'next/router';
+import { NextRouter, useRouter } from 'next/router'
 
 const HeaderLink = (href: string, text: string, router: NextRouter) => {
   return (
-    <Link href={href} className={`${styles.link} ${router.pathname === href ? styles.linkActive : ""}`}>
+    <Link
+      href={href}
+      className={`${styles.link} ${router.pathname === href ? styles.linkActive : ''}`}
+    >
       {text}
-    </Link>)
+    </Link>
+  )
 }
 
 export default function Header() {
-  const router = useRouter();
+  const router = useRouter()
   return (
     <header className={`${styles.header}`}>
-      <Link className={styles.titleLink} href='/'>
+      <Link className={styles.titleLink} href="/">
         <p className={`${styles.title} glow`}>Luis Richmond</p>
       </Link>
       <nav className={styles.nav}>
-        {HeaderLink("/", "Intro and contact Info", router)}
-        {HeaderLink("/employmentHistory", "Employment History", router)}
-        {HeaderLink("/blogIndex", "Blog", router)}
+        {HeaderLink('/', 'Intro and contact Info', router)}
+        {HeaderLink('/employmentHistory', 'Employment History', router)}
+        {HeaderLink('/blogIndex', 'Blog', router)}
       </nav>
     </header>
   )
