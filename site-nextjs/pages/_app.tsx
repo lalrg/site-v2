@@ -1,7 +1,7 @@
 import type { AppProps } from 'next/app'
 import Layout from '../components/shared/layout'
 import '../styles/global.css'
-import { Inconsolata } from '@next/font/google'
+import { Inconsolata } from 'next/font/google'
 
 const inconsolata = Inconsolata({ subsets: ['latin'] })
 
