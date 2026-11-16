@@ -5,15 +5,15 @@ import React, { useMemo, useState } from 'react'
 import SkillsToFilter from '../components/skillsToFilter'
 
 const EmploymentHistory: React.FC = () => {
-  const [skillsToFilter, setSkillsToFilter] = useState<Array<string>>([]);
+  const [skillsToFilter, setSkillsToFilter] = useState<Array<string>>([])
 
   const allSkills = useMemo<Array<string>>(() => {
-    let mappedSkills: Array<string> = [];
-    workingHistoryArray.forEach(element => {
-      mappedSkills = [...mappedSkills, ...element.bulletPoints];
-    });
+    let mappedSkills: Array<string> = []
+    workingHistoryArray.forEach((element) => {
+      mappedSkills = [...mappedSkills, ...element.bulletPoints]
+    })
 
-    return Array.from(new Set(mappedSkills));
+    return Array.from(new Set(mappedSkills))
   }, [])
 
   return (
@@ -22,36 +22,38 @@ const EmploymentHistory: React.FC = () => {
         <h1 className={styles.title}>Employment History </h1>
         <p>Companies I have worked with and the technology stacks I have used.</p>
       </section>
-      <SkillsToFilter selectedSkills={skillsToFilter} onChange={(c) => { setSkillsToFilter(c) }} allSkills={allSkills} />
+      <SkillsToFilter
+        selectedSkills={skillsToFilter}
+        onChange={(c) => {
+          setSkillsToFilter(c)
+        }}
+        allSkills={allSkills}
+      />
       <section className={`${styles.section} ${styles.employmentHistory}`}>
-        {
-          workingHistoryArray.map(
-            i => {
-              let display = false;
-              i.bulletPoints.forEach(
-                b => {
-                  if (skillsToFilter.includes(b)) {
-                    display = true;
-                  }
-                }
-              )
-              if (display || !skillsToFilter.length) {
-                return (<WorkHistoryItem
-                  jobDescription={i.jobDescription}
-                  company={i.company}
-                  startDate={i.startDate}
-                  endDate={i.endDate}
-                  position={i.position}
-                  bulletPoints={i.bulletPoints}
-                  key={i.company + i.endDate}
-                />)
-              }
+        {workingHistoryArray.map((i) => {
+          let display = false
+          i.bulletPoints.forEach((b) => {
+            if (skillsToFilter.includes(b)) {
+              display = true
             }
-          )
-        }
+          })
+          if (display || !skillsToFilter.length) {
+            return (
+              <WorkHistoryItem
+                jobDescription={i.jobDescription}
+                company={i.company}
+                startDate={i.startDate}
+                endDate={i.endDate}
+                position={i.position}
+                bulletPoints={i.bulletPoints}
+                key={i.company + i.endDate}
+              />
+            )
+          }
+        })}
       </section>
     </main>
   )
 }
 
-export default EmploymentHistory;
+export default EmploymentHistory
