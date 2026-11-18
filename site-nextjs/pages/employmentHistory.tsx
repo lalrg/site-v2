@@ -48,7 +48,7 @@ const EmploymentHistory: React.FC = () => {
                 endDate={i.endDate}
                 position={i.position}
                 bulletPoints={i.bulletPoints}
-                key={i.company + i.endDate}
+                key={i.company + i.startDate}
               />
             )
           }

@@ -344,9 +344,15 @@ language you cannot read is useless (D6).
       chip label byte-identical; the substring `Luis Richmond` appears in the
       Spanish header and footer.
 - [ ] `localeNames` yields `English` / `Español` identically in both locales.
-- [ ] The Spanish dictionary contains no translated company name or tech label
-      (`grep` for `GreenSlate`, `Javascript`, `SQL Server` in `es.ts` returns
-      nothing).
+- [ ] The Spanish dictionary contains no translated company name
+      (`grep -rn "GreenSlate\|Gorilla Logic\|Growth Acceleration Partners\|Ernst&Young\|Datasoft" staticData/i18n/es.ts` returns nothing) and no translated tech label outside prose.
+      **Recorded exception:** `home.summary` names `SQL Server`, `React`,
+      `JavaScript`, `TypeScript`, `.Net Core` and `Python` in both locales,
+      because those names are part of the English sentence being translated.
+      The check is that the technology list is identical in `en-GB.ts` and
+      `es.ts`, not that the string is absent from `es.ts` — amended 2026-11-17
+      after I18N-1 showed the original grep could only pass by deleting a
+      product name from a correctly translated sentence.
 
 ### R10 — Working history: one entry per job, language per field
 

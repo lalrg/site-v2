@@ -628,9 +628,13 @@ of the title and description (R8).
       `bulletPoints` chip label, and `localeNames` (`English` / `Español`) (R9).
 - [ ] The blog placeholder keeps its emoji in both locales — the emoji is part
       of the value, not markup (R8).
-- [ ] `grep -rn "GreenSlate\|Javascript\|SQL Server" site-nextjs/staticData/i18n/es.ts`
-      returns nothing: no translated company name or tech label entered the
-      Spanish dictionary (R9).
+- [ ] No translated company name entered the Spanish dictionary
+      (`grep -rn "GreenSlate\|Gorilla Logic\|Growth Acceleration Partners\|Ernst&Young\|Datasoft" site-nextjs/staticData/i18n/es.ts`
+      returns nothing) and no chip label was translated (R9). The technology list
+      inside `home.summary` is identical in both locales — see the recorded
+      exception in spec R9 (amended 2026-11-17): `SQL Server` and the other
+      product names legitimately appear in `es.ts` because they are part of the
+      translated sentence.
 - [ ] Config and shell text that is not copy is untouched: the viewport meta, the
       favicon link, the heart icon, the GitHub link's `href`, and every
       `className` expression are as they were.
@@ -662,7 +666,10 @@ grep -rnE "Nice to meet you|Professional Summary|Contact Information|Filter work
   pages components                                          # expect no output
 grep -rn "Still working here" . --exclude-dir={node_modules,.next}   # expect staticData/i18n/en-GB.ts and
                                                            # staticData/employmentHistory/workingHistory.ts only (I18N-5 removes the second)
-grep -rn "GreenSlate\|Javascript\|SQL Server" staticData/i18n/es.ts  # expect no output
+grep -rn "GreenSlate\|Gorilla Logic\|Growth Acceleration Partners\|Ernst&Young\|Datasoft" staticData/i18n/es.ts  # expect no output
+# R9 amended 2026-11-17: the tech list in home.summary is identical in both locales;
+# SQL Server et al. legitimately appear in es.ts. Compare the two summary values instead:
+diff <(grep -A1 "summary:" staticData/i18n/en-GB.ts) <(grep -A1 "summary:" staticData/i18n/es.ts)  # expect differ only in prose
 
 yarn start & sleep 3
 curl -s localhost:3000/ | grep -c 'Nice to meet you, I am Luis'      # expect 1 (English unchanged)
