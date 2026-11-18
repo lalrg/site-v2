@@ -16,7 +16,7 @@ lives in `site-nextjs/`; the repo root holds docs and the license.
 | PostCSS | `autoprefixer` only — no Tailwind | 10.4.13 |
 | Lint | ESLint (flat config), `eslint-config-next/core-web-vitals` | 10.15.0 |
 | Testing | none yet (known gap, see Definition of done) | — |
-| Data | literal TS arrays in `staticData/` — no DB, no API | — |
+| Data | literal TS arrays in `staticData/`, including translations in `staticData/i18n/` — no DB, no API | — |
 
 ## Commands
 
@@ -50,6 +50,21 @@ All commands run in `site-nextjs/`, not the repo root.
 - `staticData/` — typed literal content, imported directly by pages. Content
   changes are data edits, not data fetching. Do not introduce an API layer
   without a spec.
+- `staticData/i18n/` — the UI copy, one file per locale: `en-GB.ts` is the
+  source of the key set (and of the `Dictionary` type), `es.ts` is annotated
+  with it so a missing or extra key fails `yarn typecheck`, and
+  `translations.ts` maps `Locale` to dictionary.
+- `components/shared/locale/` — the locale provider, its `useLocale` hook, the
+  flag switcher and the two inline-SVG flags. The provider is the only owner of
+  the active locale and the hook is the only read path.
+- `lib/locale.ts` — framework-free locale primitives (`Locale`, `LOCALES`,
+  `LOCALE_COOKIE_NAME`, `localeNames`, `parseLocaleCookie`,
+  `serializeLocaleCookie`). No React, no `next`, no DOM.
+- The language toggle is client-side and cookie-backed (`NEXT_LOCALE`): the URL
+  never changes, no route reads the cookie on the server, and every route stays
+  static. `<html lang>` follows the choice via a pre-paint script in
+  `pages/_document.tsx` plus a runtime sync in the provider. Shape and rejected
+  alternatives: `docs/architecture.md`.
 - Styling: CSS Modules per component, imported as `styles from './x.module.css'`.
   Rationale and rejected alternatives in `docs/styling.md`.
 - Every page is statically rendered (`next build` reports all routes as static).
@@ -65,6 +80,17 @@ Harness standards apply by default (`~/.config/opencode/standards/_index.md`).
 | CSS / CSS Modules | `~/.config/opencode/standards/css.md` | none |
 
 No other language is in scope. Adding one requires a standard first.
+
+### Recorded divergences
+
+`_index.md` treats a divergence that is not written down as a defect. Epic 1
+R14 owns four (`docs/specs/2026-11-16-epic-1-foundation.md` §R14); they are not
+written here yet, and Epic 1 Phase 4 owns that rewrite. The i18n feature adds
+the one below.
+
+| Where | Divergence | Reason |
+| --- | --- | --- |
+| `site-nextjs/components/shared/locale/LocaleProvider.tsx` | `react-hooks/set-state-in-effect` is off, file-scoped in `eslint.config.mjs` | R3 forbids reading the `NEXT_LOCALE` cookie during render — it would desync hydration — so the stored locale is read once in a mount effect and applied with `setState`. `@typescript-eslint/no-explicit-any` stays at error repo-wide. |
 
 ## Task source
 
