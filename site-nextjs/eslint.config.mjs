@@ -10,6 +10,15 @@ const eslintConfig = [
       '@typescript-eslint/no-explicit-any': 'error',
     },
   },
+  {
+    files: ['components/shared/locale/LocaleProvider.tsx'],
+    rules: {
+      // R3 forbids reading the cookie during render (it would desync hydration),
+      // so the stored locale is read once in a mount effect and applied with
+      // setState. That is the documented design, not derived-state syncing.
+      'react-hooks/set-state-in-effect': 'off',
+    },
+  },
 ]
 
 export default eslintConfig

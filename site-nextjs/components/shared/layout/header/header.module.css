@@ -6,13 +6,26 @@
   padding-bottom: 0.625rem;
   padding-top: 0.625rem;
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 500;
   color: white;
 }
 
+@media screen and (min-width: 1000px) {
+  .title {
+    font-size: 2.5rem;
+  }
+}
+
 .titleLink {
+  grid-area: title;
   text-decoration: none;
+}
+
+.languageSwitcher {
+  grid-area: switcher;
+  align-self: center;
+  justify-self: end;
 }
 
 @media screen and (min-width: 1000px) {
@@ -48,11 +61,12 @@
   top: 0;
   right: 0;
   left: 0;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr) auto;
   grid-template-rows: repeat(2, 1fr);
   grid-template-areas:
-    'title'
-    'links';
+    'title switcher'
+    'links links';
+  column-gap: 0.5rem;
   border-bottom: 0.125rem solid #b4aee8;
 }
 
