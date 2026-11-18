@@ -3,9 +3,11 @@ import WorkHistoryItem from '../components/employmentHistory/WorkHistoryItem'
 import { workingHistoryArray } from '../staticData/employmentHistory/workingHistory'
 import React, { useMemo, useState } from 'react'
 import SkillsToFilter from '../components/skillsToFilter'
+import { useLocale } from '../components/shared/locale/LocaleProvider'
 
 const EmploymentHistory: React.FC = () => {
   const [skillsToFilter, setSkillsToFilter] = useState<Array<string>>([])
+  const { messages } = useLocale()
 
   const allSkills = useMemo<Array<string>>(() => {
     let mappedSkills: Array<string> = []
@@ -19,8 +21,8 @@ const EmploymentHistory: React.FC = () => {
   return (
     <main>
       <section className={styles.section}>
-        <h1 className={styles.title}>Employment History </h1>
-        <p>Companies I have worked with and the technology stacks I have used.</p>
+        <h1 className={styles.title}>{messages.employmentHistory.title}</h1>
+        <p>{messages.employmentHistory.subtitle}</p>
       </section>
       <SkillsToFilter
         selectedSkills={skillsToFilter}

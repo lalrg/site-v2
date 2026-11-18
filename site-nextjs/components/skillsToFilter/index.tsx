@@ -1,4 +1,5 @@
 import styles from './skillsToFilter.module.css'
+import { useLocale } from '../shared/locale/LocaleProvider'
 
 type SkillsToFilterProps = {
   allSkills: Array<string>
@@ -23,6 +24,7 @@ const mapSkill = (
 }
 
 const SkillsToFilter: React.FC<SkillsToFilterProps> = ({ allSkills, selectedSkills, onChange }) => {
+  const { messages } = useLocale()
   const onClick = (skill: string, selected: boolean) => {
     if (!selected) {
       onChange(selectedSkills.filter((x) => x !== skill))
@@ -32,7 +34,7 @@ const SkillsToFilter: React.FC<SkillsToFilterProps> = ({ allSkills, selectedSkil
   }
   return (
     <>
-      <h3 className={styles.subTitle}>Filter working experiences by:</h3>
+      <h3 className={styles.subTitle}>{messages.skillsToFilter.heading}</h3>
       <div className={styles.filtersContainer}>
         <ul className={styles.skillList}>
           {allSkills.map((s) => mapSkill(s, selectedSkills.includes(s), onClick))}

@@ -3,6 +3,7 @@ import styles from './header.module.css'
 import { useRouter } from 'next/router'
 import type { NextRouter } from 'next/router'
 import LanguageSwitcher from '../../locale/LanguageSwitcher'
+import { useLocale } from '../../locale/LocaleProvider'
 
 const HeaderLink = (href: string, text: string, router: NextRouter) => {
   return (
@@ -17,6 +18,7 @@ const HeaderLink = (href: string, text: string, router: NextRouter) => {
 
 export default function Header() {
   const router = useRouter()
+  const { messages } = useLocale()
   return (
     <header className={`${styles.header}`}>
       <Link className={styles.titleLink} href="/">
@@ -24,9 +26,9 @@ export default function Header() {
       </Link>
       <LanguageSwitcher className={styles.languageSwitcher} />
       <nav className={styles.nav}>
-        {HeaderLink('/', 'Intro and contact Info', router)}
-        {HeaderLink('/employmentHistory', 'Employment History', router)}
-        {HeaderLink('/blogIndex', 'Blog', router)}
+        {HeaderLink('/', messages.nav.intro, router)}
+        {HeaderLink('/employmentHistory', messages.nav.employmentHistory, router)}
+        {HeaderLink('/blogIndex', messages.nav.blog, router)}
       </nav>
     </header>
   )

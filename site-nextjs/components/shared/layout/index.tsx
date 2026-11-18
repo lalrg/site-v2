@@ -2,6 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import Header from './header'
 import Footer from './footer'
+import { useLocale } from '../locale/LocaleProvider'
 import styles from './layout.module.css'
 
 type LayoutProps = {
@@ -10,14 +11,12 @@ type LayoutProps = {
 }
 
 export default function Layout({ children, className }: LayoutProps) {
+  const { messages } = useLocale()
   return (
     <span className={className}>
       <Head>
-        <title>Lalrg&apos;s site</title>
-        <meta
-          name="description"
-          content="My profesional story, information to contact me, and some blog entries(coming soon)"
-        />
+        <title>{messages.meta.title}</title>
+        <meta name="description" content={messages.meta.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Header />

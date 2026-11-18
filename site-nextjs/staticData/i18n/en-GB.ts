@@ -12,7 +12,7 @@ export const enGB = {
   home: {
     title: 'Nice to meet you, I am Luis',
     intro:
-      'I am a problem-solver and enjoy helping people do their jobs more efficiently through the development of applications. I have been working in this field for about 7 years and had the opportunity to work with a variety of companies, including the Government, small businesses, and global companies with hundreds of employees. I have also worked as an independant consultant for several companies.',
+      'I am a problem-solver and enjoy helping people do their jobs more efficiently through the development of applications. I have been working in this field for about 7 years and have had the opportunity to work with a variety of companies, including the Government, small businesses, and global companies with hundreds of employees. I have also worked as an independant consultant for several companies.',
     summaryHeading: 'Professional Summary',
     summary:
       'I have a strong background in software development, with a focus on using technologies such as React, JavaScript, TypeScript, SQL Server, .Net Core, and Python.',
